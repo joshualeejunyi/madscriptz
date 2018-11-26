@@ -1,0 +1,2 @@
+Acquire::http::proxy "${o}:80";
+Acquire::https::proxy "${o}:80";
