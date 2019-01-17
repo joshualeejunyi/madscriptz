@@ -26,10 +26,10 @@ then
 
 elif [ $option -eq 2 ]
 then
-	echo "do you want to modify your ip address configuration? [Y/n]"
+	echo "do you want to modify your ip address configuration? [y/n]"
 	read option1
 	
-	if [ $option1 -eq y]
+	if [ "$option1" = "y"]
 	then
 		echo "changing to internet zone"
 		cp ./template/internet ./internet
