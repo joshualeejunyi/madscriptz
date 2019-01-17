@@ -26,26 +26,20 @@ then
 
 elif [ $option -eq 2 ]
 then
-	echo "do you want to modify your ip address configuration? [y/n]"
-	read option1
-	
-	if [ "$option1" = "y"]
-	then
-		echo "changing to internet zone"
-		cp ./template/internet ./internet
-		read -p "what is your ip address >>>"
-		sed -i "s/\${i}/$REPLY/" internet
-		read -p "what is your netmask >>>"
-		sed -i "s/\${j}/$REPLY/" internet
-		read -p "what is your network >>>"
-		sed -i "s/\${k}/$REPLY/" internet
-		read -p "what is your gateway >>>"
-		sed -i "s/\${l}/$REPLY/" internet
-		read -p "what is your dns >>>"
-		sed -i "s/\${m}/$REPLY/" internet
-		sudo cp ./internet /etc/network/interfaces
-		echo "changed to internet ip"
-	fi
+	echo "changing to internet zone"
+	cp ./template/internet ./internet
+	read -p "what is your ip address >>>"
+	sed -i "s/\${i}/$REPLY/" internet
+	read -p "what is your netmask >>>"
+	sed -i "s/\${j}/$REPLY/" internet
+	read -p "what is your network >>>"
+	sed -i "s/\${k}/$REPLY/" internet
+	read -p "what is your gateway >>>"
+	sed -i "s/\${l}/$REPLY/" internet
+	read -p "what is your dns >>>"
+	sed -i "s/\${m}/$REPLY/" internet
+	sudo cp ./internet /etc/network/interfaces
+	echo "changed to internet ip"
 
 	cp ./template/proxy ./proxy
 	cp ./template/95proxies ./95proxies
